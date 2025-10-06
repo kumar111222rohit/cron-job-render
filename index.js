@@ -5,6 +5,11 @@ const {DEFAULT_CONFIG} = require('./constants')
 // Configuration
 const config = DEFAULT_CONFIG
 
+// Optional: Start health check server if PORT is set
+if (process.env.PORT) {
+  require('./health-server')
+}
+
 // Function to make HTTP request
 async function hitEndpoint(retryCount = 0) {
   try {

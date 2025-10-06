@@ -1,0 +1,18 @@
+services:
+  - type: cron
+    name: web3-message-signer-health-check
+    env: node
+    buildCommand: yarn install
+    startCommand: yarn start
+    schedule: '*/15 * * * *' # Every 15 minutes
+    envVars:
+      - key: ENDPOINT_URL
+        value: https://web3-message-signer-0dqt.onrender.com/health
+      - key: NODE_ENV
+        value: production
+      - key: REQUEST_TIMEOUT
+        value: '30000'
+      - key: MAX_RETRIES
+        value: '3'
+      - key: RETRY_DELAY
+        value: '5000'

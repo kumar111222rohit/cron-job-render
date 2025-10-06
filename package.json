@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "build": "echo 'No build step required'",
+    "deploy": "echo 'Deploy to Render'"
   },
   "keywords": [
     "cron",
